@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>JC's Motorbikes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">myMotos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+
+<ion-list>
+  <ion-item *ngFor="let m of motos">
+    <ion-label>
+      <h1>{{m.model}}</h1>
+      <p>{{m.cylinderCap}}</p>
+      <p>{{m.color}}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>
