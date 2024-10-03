@@ -4,18 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MyMotosPageRoutingModule } from './my-motos-routing.module';
+import { FormMotoPageRoutingModule } from './form-moto-routing.module';
 
-import { MyMotosPage } from './my-motos.page';
+import { FormMotoPage } from './form-moto.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     IonicModule,
-    MyMotosPageRoutingModule
+    FormMotoPageRoutingModule,
+    ReactiveFormsModule
   ],
-  declarations: [MyMotosPage]
+  declarations: [FormMotoPage]
 })
-export class MyMotosPageModule {}
+export class FormMotoPageModule {}

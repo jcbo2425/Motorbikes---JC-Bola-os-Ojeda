@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>formMoto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">formMoto</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="motoForm" (ngSubmit)="createMoto()">
+    <ion-item>
+      <ion-label position="floating">Model</ion-label>
+      <ion-input formControlName="model" type="text"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('model')?.hasError('required') && getFormControl('model')?.touched">
+      Es necesario determinar el modelo
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Cylinder capacity</ion-label>
+      <ion-input formControlName="cylinderCap" type="text"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('cylinderCap')?.hasError('required') && getFormControl('cylinderCap')?.touched">
+      Indique la cilindrada
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Color</ion-label>
+      <ion-input formControlName="color" type="text"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('color')?.hasError('required') && getFormControl('color')?.touched">
+      Indique el color de la moto
+    </ion-note>
+
+    <ion-button type="submit" [disabled]="!motoForm.valid">Crear moto</ion-button>
+  </form>
+
+</ion-content>

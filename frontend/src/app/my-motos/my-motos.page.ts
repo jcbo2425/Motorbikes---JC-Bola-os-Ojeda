@@ -1,5 +1,7 @@
 import { Component, model, OnInit } from '@angular/core';
 import { MotoService } from '../services/moto.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-motos',
@@ -12,6 +14,7 @@ export class MyMotosPage implements OnInit {
 
   constructor(private motoService: MotoService) { }
 
+
   ngOnInit() {
     this.getAllMotos();
   }
@@ -20,6 +23,13 @@ export class MyMotosPage implements OnInit {
     this.motoService.getMotos().subscribe(response => {
       this.motos = response;
     });
+  }
+
+  deleteMoto(id:any){
+    this.motoService.delete(id).subscribe(() => {
+      console.log("ayudaaaaa")
+      this.getAllMotos();
+    })
   }
 
 }
