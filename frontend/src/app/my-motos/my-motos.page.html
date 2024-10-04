@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>JC's Motorbikes</ion-title>
+    <ion-title alignment="center">
+      <ion-button (click)="goToHome()">HOME</ion-button>
+      JC's Motorbikes
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,12 +16,14 @@
 </ion-content>
 
 <ion-list>
+  <ion-button (click)="goToForm()" color="butadd">Add a new motorbike</ion-button>
   <ion-item *ngFor="let m of motos">
     <ion-label>
       <h1>{{m.model}}</h1>
       <p>{{m.cylinderCap}}</p>
       <p>{{m.color}}</p>
-      <ion-button (click)="deleteMoto(m.id)">DELETE</ion-button>
+      <ion-button (click)="updateMoto(m.id, m)"color="warning">UPDATE</ion-button>
+      <ion-button (click)="deleteMoto(m.id)"color="danger">DELETE</ion-button>
     </ion-label>
   </ion-item>
 </ion-list>

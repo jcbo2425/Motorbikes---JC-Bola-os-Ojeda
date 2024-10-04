@@ -3,6 +3,7 @@ import { MotoService } from '../services/moto.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-my-motos',
   templateUrl: './my-motos.page.html',
@@ -12,10 +13,13 @@ export class MyMotosPage implements OnInit {
 
   motos: any = [];
 
-  constructor(private motoService: MotoService) { }
-
+  constructor(private motoService: MotoService, private router: Router) { }
 
   ngOnInit() {
+   // this.getAllMotos();
+  }
+
+  ionViewWillEnter() {
     this.getAllMotos();
   }
 
@@ -27,9 +31,22 @@ export class MyMotosPage implements OnInit {
 
   deleteMoto(id:any){
     this.motoService.delete(id).subscribe(() => {
-      console.log("ayudaaaaa")
       this.getAllMotos();
     })
+  }
+  
+  updateMoto(id:any, data: any){
+    this.motoService.update(id,data).subscribe(() => {
+      this.getAllMotos();
+    })
+  }
+
+  goToHome(){
+    this.router.navigateByUrl("/home");
+  }
+
+  goToForm(){
+    this.router.navigateByUrl("/form-moto");
   }
 
 }

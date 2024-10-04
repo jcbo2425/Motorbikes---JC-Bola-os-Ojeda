@@ -28,7 +28,10 @@ export class MotoService {
   }
 
   delete(id: any){
-    console.log(id,"motoo ")
     return this.httpClient.delete(`${this.endpoint}/${id}`);
+  }
+
+  update(id: any, data: any){
+    return this.httpClient.put(`${this.endpoint}/${id}`,data);
   }
 }

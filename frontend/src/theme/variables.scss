@@ -1,2 +1,38 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+:root {
+	background-color: rgb(65, 65, 65);
+
+	--ion-color-butadd: #64cd64;
+	--ion-color-butadd-rgb: 100,205,100;
+	--ion-color-butadd-contrast: #000000;
+	--ion-color-butadd-contrast-rgb: 0,0,0;
+	--ion-color-butadd-shade: #58b458;
+	--ion-color-butadd-tint: #74d274;
+
+	--ion-color-tertiary: #91c8ff;
+	--ion-color-tertiary-rgb: 145,200,255;
+	--ion-color-tertiary-contrast: #000000;
+	--ion-color-tertiary-contrast-rgb: 0,0,0;
+	--ion-color-tertiary-shade: #80b0e0;
+	--ion-color-tertiary-tint: #9cceff;
+}
+
+.ion-color-tertiary {
+	--ion-color-base: var(--ion-color-tertiary);
+	--ion-color-base-rgb: var(--ion-color-tertiary-rgb);
+	--ion-color-contrast: var(--ion-color-tertiary-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-tertiary-contrast-rgb);
+	--ion-color-shade: var(--ion-color-tertiary-shade);
+	--ion-color-tint: var(--ion-color-tertiary-tint);
+}
+
+.ion-color-butadd {
+	--ion-color-base: var(--ion-color-butadd);
+	--ion-color-base-rgb: var(--ion-color-butadd-rgb);
+	--ion-color-contrast: var(--ion-color-butadd-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-butadd-contrast-rgb);
+	--ion-color-shade: var(--ion-color-butadd-shade);
+	--ion-color-tint: var(--ion-color-butadd-tint);
+}

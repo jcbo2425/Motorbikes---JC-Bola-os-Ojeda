@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>formMoto</ion-title>
+    <ion-title>Introduce information about new motorbike: </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -37,6 +37,7 @@
     </ion-note>
 
     <ion-button type="submit" [disabled]="!motoForm.valid">Crear moto</ion-button>
+    <ion-button (click)="goBack()" color="tertiary">Back</ion-button>
   </form>
 
 </ion-content>

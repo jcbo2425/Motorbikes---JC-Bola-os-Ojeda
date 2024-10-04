@@ -49,7 +49,9 @@ exports.findAll = (req, res) => {
 
 
 exports.findOne = (req, res) => {
-    Moto.findOne()
+    const id =req.params.id;
+
+    Moto.findByPk(id)
     .then(data => {
         res.send(data);
     })
@@ -79,9 +81,9 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    Moto.delete({where:{id:id}})
-    .then(data => {
-        res.send(data);
+    Moto.destroy({where:{id:id}})
+    .then(() => {
+        res.send({message: "Motorbike deleted"});
     })
     .catch(err => {
         res.status(500).send({

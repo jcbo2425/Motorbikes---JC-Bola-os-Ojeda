@@ -39,8 +39,14 @@ export class FormMotoPage implements OnInit {
     }
   }
 
+
   getFormControl(field: string) {
     return this.motoForm.get(field);
+  }
+
+  //Redirect
+  goBack(){
+    this.route.navigateByUrl("/my-motos");
   }
 }
 
